@@ -40,6 +40,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":CreateTypography"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
