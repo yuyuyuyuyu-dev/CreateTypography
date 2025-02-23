@@ -1,3 +1,4 @@
+import com.vanniktech.maven.publish.SonatypeHost
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
@@ -9,6 +10,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.vanniktech.maven.publish)
 }
 
 kotlin {
@@ -113,6 +115,44 @@ compose.desktop {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "dev.yuyuyuyuyu.createtypography"
             packageVersion = "1.0.0"
+        }
+    }
+}
+
+mavenPublishing {
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+
+    signAllPublications()
+
+    coordinates(
+        groupId = "dev.yuyuyuyuyu",
+        artifactId = "createtypography",
+        version = "0.1.0",
+    )
+
+    pom {
+        name = "CreateTypography"
+        description =
+            "A library for Android and Compose Multiplatform, provide functions that create Typography from font name or FontFamily."
+        inceptionYear = "2025"
+        url = "https://github.com/yu-ko-ba/CreateTypography#readme"
+        licenses {
+            license {
+                name = "The Apache License, Version 2.0"
+                url = "https://www.apache.org/licenses/LICENSE-2.0.txt"
+                distribution = "https://www.apache.org/licenses/LICENSE-2.0.txt"
+            }
+        }
+        developers {
+            developer {
+                name = "yu"
+                url = "https://yuyuyuyuyu.dev"
+            }
+        }
+        scm {
+            url = "https://github.com/yu-ko-ba/CreateTypography"
+            connection = "scm:git:git://github.com/yu-ko-ba/CreateTypography.git"
+            developerConnection = "scm:git:ssh://git@github.com/yu-ko-ba/CreateTypography.git"
         }
     }
 }
