@@ -1,21 +1,91 @@
-This is a Kotlin Multiplatform project targeting Android, iOS, Web, Desktop.
-
-* `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - `commonMain` is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    `iosMain` would be the right folder for such calls.
-
-* `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform, 
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+# CreateTypography
+A library for Android and Compose Multiplatform, provide functions that create Typography from font name or FontFamily.
 
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html),
-[Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform/#compose-multiplatform),
-[Kotlin/Wasm](https://kotl.in/wasm/)…
+## Installation
+### Android
+app/build.gradle.kts
+```diff
+dependencies {
+    ...
 
-We would appreciate your feedback on Compose/Web and Kotlin/Wasm in the public Slack channel [#compose-web](https://slack-chats.kotlinlang.org/c/compose-web).
-If you face any issues, please report them on [GitHub](https://github.com/JetBrains/compose-multiplatform/issues).
++   implementation("dev.yuyuyuyuyu:createtypography:0.1.0")
+}
+```
 
-You can open the web application by running the `:composeApp:wasmJsBrowserDevelopmentRun` Gradle task.
+### Compose Multiplatform
+composeApp/build.gradle.kts
+```diff
+kotlin {
+...
+
+    sourceSets {
+        ...
+
+        commonMain.dependencies {
+            ...
+
++           implementation("dev.yuyuyuyuyu:createtypography:0.1.0")
+        }
+    }
+}
+
+```
+
+
+## Screenshots
+### Android
+
+<img width="300" alt="Android Screenshot" src="https://github.com/user-attachments/assets/e2f31fc3-7a8f-4578-bc6f-bd14d50161f4" />
+
+### Compose Multiplatform
+
+<img width="600" alt="Compose Multiplatform Screenshot" src="https://github.com/user-attachments/assets/d0a4d32a-5816-4d69-9667-77aec0e99644" />
+
+
+## Examples
+### Android
+[app/src/main/java/dev/yuyuyuyuyu/createtypography/example/android/ui/theme/Type.kt](https://github.com/yu-ko-ba/CreateTypography/blob/main/app/src/main/java/dev/yuyuyuyuyu/createtypography/example/android/ui/theme/Type.kt)
+```kotlin
+val Typography = createTypographyFrom(fontName = "Yomogi")
+```
+
+### Compose Multiplatform
+[composeApp/src/commonMain/kotlin/dev/yuyuyuyuyu/createtypography/example/multiplatform/App.kt](https://github.com/yu-ko-ba/CreateTypography/blob/main/composeApp/src/commonMain/kotlin/dev/yuyuyuyuyu/createtypography/example/multiplatform/App.kt)
+```kotlin
+@Composable
+fun App() {
+    MaterialTheme(
+        typography = createTypographyFrom(fontFamily = FontFamily(Font(Res.font.Yomogi_Regular))),
+    ) {
+        Scaffold { innerPadding ->
+            Box(
+                modifier = Modifier.padding(innerPadding),
+            ) {
+                Text(
+                    text = "Hello, ${getPlatform().name}!",
+                )
+            }
+        }
+    }
+}
+```
+
+
+## License
+Apache License 2.0
+```
+Copyright 2025 yu
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
