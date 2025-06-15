@@ -1,9 +1,6 @@
 import com.vanniktech.maven.publish.SonatypeHost
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
-import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -79,7 +76,7 @@ mavenPublishing {
         description =
             "A library for Android and Compose Multiplatform, provide functions that create Typography from font name or FontFamily."
         inceptionYear = "2025"
-        url = "https://github.com/yu-ko-ba/CreateTypography#readme"
+        url = "https://github.com/yuyuyuyuyu-dev/CreateTypography#readme"
         licenses {
             license {
                 name = "The Apache License, Version 2.0"
@@ -94,9 +91,9 @@ mavenPublishing {
             }
         }
         scm {
-            url = "https://github.com/yu-ko-ba/CreateTypography"
-            connection = "scm:git:git://github.com/yu-ko-ba/CreateTypography.git"
-            developerConnection = "scm:git:ssh://git@github.com/yu-ko-ba/CreateTypography.git"
+            url = "https://github.com/yuyuyuyuyu-dev/CreateTypography"
+            connection = "scm:git:git://github.com/yuyuyuyuyu-dev/CreateTypography.git"
+            developerConnection = "scm:git:ssh://git@github.com/yuyuyuyuyu-dev/CreateTypography.git"
         }
     }
 }
