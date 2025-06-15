@@ -71,7 +71,7 @@ mavenPublishing {
     coordinates(
         groupId = "dev.yuyuyuyuyu",
         artifactId = "createtypography",
-        version = "0.1.0",
+        version = "0.1.1",
     )
 
     pom {
