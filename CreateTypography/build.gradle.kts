@@ -21,6 +21,9 @@ kotlin {
     jvm("desktop")
 
     sourceSets {
+        androidMain.dependencies {
+            implementation(libs.androidx.compose.ui.text.googlefonts)
+        }
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
