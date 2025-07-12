@@ -6,7 +6,7 @@ import androidx.compose.ui.text.font.FontFamily
 private val defaultTypography = Typography()
 fun createTypographyFrom(fontFamily: FontFamily): Typography = Typography(
     displayLarge = defaultTypography.displayLarge.copy(fontFamily = fontFamily),
-    displayMedium = defaultTypography.bodyMedium.copy(fontFamily = fontFamily),
+    displayMedium = defaultTypography.displayMedium.copy(fontFamily = fontFamily),
     displaySmall = defaultTypography.displaySmall.copy(fontFamily = fontFamily),
     headlineLarge = defaultTypography.headlineLarge.copy(fontFamily = fontFamily),
     headlineMedium = defaultTypography.headlineMedium.copy(fontFamily = fontFamily),
