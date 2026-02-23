@@ -1,4 +1,5 @@
 rootProject.name = "CreateTypography"
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
     repositories {
@@ -27,6 +28,9 @@ dependencyResolutionManagement {
     }
 }
 
-include(":CreateTypography")
-include(":app")
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
+}
+
 include(":composeApp")
+include(":library")
