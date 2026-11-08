@@ -51,21 +51,16 @@ val Typography = createTypographyFrom(fontName = "Yomogi")
 ```
 
 ### Compose Multiplatform
-[composeApp/src/commonMain/kotlin/dev/yuyuyuyuyu/createtypography/example/multiplatform/App.kt](https://github.com/yu-ko-ba/CreateTypography/blob/main/composeApp/src/commonMain/kotlin/dev/yuyuyuyuyu/createtypography/example/multiplatform/App.kt)
+[example/shared/src/commonMain/kotlin/dev/yuyuyuyuyu/createtypography/example/App.kt](example/shared/src/commonMain/kotlin/dev/yuyuyuyuyu/createtypography/example/App.kt)
 ```kotlin
 @Composable
+@Preview
 fun App() {
     MaterialTheme(
         typography = createTypographyFrom(fontFamily = FontFamily(Font(Res.font.Yomogi_Regular))),
     ) {
         Scaffold { innerPadding ->
-            Box(
-                modifier = Modifier.padding(innerPadding),
-            ) {
-                Text(
-                    text = "Hello, ${getPlatform().name}!",
-                )
-            }
+            TextColumn(modifier = Modifier.padding(innerPadding))
         }
     }
 }
