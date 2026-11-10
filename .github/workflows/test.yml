@@ -13,8 +13,8 @@ concurrency:
 permissions: {}
 
 jobs:
-  desktop-test:
-    name: Desktop test (library)
+  test:
+    name: Test (library)
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -29,5 +29,5 @@ jobs:
         with:
           compose-multiplatform: true
 
-      - name: Run desktop tests
-        run: ./gradlew :library:desktopTest
+      - name: Run tests
+        run: ./gradlew allTest
