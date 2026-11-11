@@ -1,9 +1,9 @@
 This is a Kotlin Multiplatform project targeting Android, iOS, Web, Desktop (JVM).
 
-* [/iosApp](./iosApp/iosApp) contains an iOS application. Even if you’re sharing your UI with Compose Multiplatform,
+- [/iosApp](./iosApp/iosApp) contains an iOS application. Even if you’re sharing your UI with Compose Multiplatform,
   you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
 
-* [/shared](./shared/src) is for code that will be shared across your Compose Multiplatform applications.
+- [/shared](./shared/src) is for code that will be shared across your Compose Multiplatform applications.
   It contains several subfolders:
   - [commonMain](./shared/src/commonMain/kotlin) is for code that’s common for all targets.
   - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.

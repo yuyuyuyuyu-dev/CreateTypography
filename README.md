@@ -1,10 +1,13 @@
 # CreateTypography
+
 A library for Android and Compose Multiplatform, provide functions that create Typography from font name or FontFamily.
 
-
 ## Installation
+
 ### Android
+
 app/build.gradle.kts
+
 ```diff
 dependencies {
     ...
@@ -14,7 +17,9 @@ dependencies {
 ```
 
 ### Compose Multiplatform
+
 composeApp/build.gradle.kts
+
 ```diff
 kotlin {
 ...
@@ -32,8 +37,8 @@ kotlin {
 
 ```
 
-
 ## Screenshots
+
 ### Android
 
 <img width="300" alt="Android Screenshot" src="https://github.com/user-attachments/assets/e2f31fc3-7a8f-4578-bc6f-bd14d50161f4" />
@@ -42,16 +47,20 @@ kotlin {
 
 <img width="600" alt="Compose Multiplatform Screenshot" src="https://github.com/user-attachments/assets/d0a4d32a-5816-4d69-9667-77aec0e99644" />
 
-
 ## Examples
+
 ### Android
+
 [app/src/main/java/dev/yuyuyuyuyu/createtypography/example/android/ui/theme/Type.kt](https://github.com/yu-ko-ba/CreateTypography/blob/main/app/src/main/java/dev/yuyuyuyuyu/createtypography/example/android/ui/theme/Type.kt)
+
 ```kotlin
 val Typography = createTypographyFrom(fontName = "Yomogi")
 ```
 
 ### Compose Multiplatform
+
 [example/shared/src/commonMain/kotlin/dev/yuyuyuyuyu/createtypography/example/App.kt](example/shared/src/commonMain/kotlin/dev/yuyuyuyuyu/createtypography/example/App.kt)
+
 ```kotlin
 @Composable
 @Preview
@@ -66,9 +75,10 @@ fun App() {
 }
 ```
 
-
 ## License
+
 Apache License 2.0
+
 ```
 Copyright 2025 yu
 
