@@ -14,7 +14,7 @@ permissions: {}
 
 jobs:
   test:
-    name: Test (library)
+    name: Test
     runs-on: ubuntu-latest
     permissions:
       contents: read
