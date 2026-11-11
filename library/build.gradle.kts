@@ -60,6 +60,7 @@ kotlin {
     @OptIn(ExperimentalWasmDsl::class)
     wasmJs {
         browser()
+        binaries.executable()
     }
 
     sourceSets {
@@ -73,6 +74,11 @@ kotlin {
             implementation(libs.compose.ui)
             implementation(libs.compose.components.resources)
             implementation(libs.compose.uiToolingPreview)
+        }
+        named("desktopTest").dependencies {
+            implementation(kotlin("test"))
+            implementation(libs.compose.uiTest)
+            implementation(compose.desktop.currentOs)
         }
     }
 }
