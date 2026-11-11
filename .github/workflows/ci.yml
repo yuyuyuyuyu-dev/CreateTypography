@@ -1,4 +1,4 @@
-name: Test
+name: CI
 
 on:
   push:
@@ -13,6 +13,29 @@ concurrency:
 permissions: {}
 
 jobs:
+  biome:
+    name: Biome
+    permissions:
+      contents: read
+    uses: yuyuyuyuyu-dev/repo-config/.github/workflows/biome.yml@main
+
+  kotlin-lint-library:
+    name: Kotlin lint (library)
+    permissions:
+      contents: read
+    uses: yuyuyuyuyu-dev/repo-config/.github/workflows/kotlin-lint.yml@main
+    with:
+      compose-multiplatform: true
+
+  kotlin-lint-example:
+    name: Kotlin lint (example)
+    permissions:
+      contents: read
+    uses: yuyuyuyuyu-dev/repo-config/.github/workflows/kotlin-lint.yml@main
+    with:
+      compose-multiplatform: true
+      working-directory: example
+
   test:
     name: Test
     runs-on: ubuntu-latest
