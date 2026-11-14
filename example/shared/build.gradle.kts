@@ -50,11 +50,13 @@ kotlin {
     android {
         namespace = "dev.yuyuyuyuyu.createtypography.example.shared"
         compileSdk =
-            libs.versions.android.compileSdk
+            providers
+                .gradleProperty("androidCompileSdk")
                 .get()
                 .toInt()
         minSdk =
-            libs.versions.android.minSdk
+            providers
+                .gradleProperty("androidMinSdk")
                 .get()
                 .toInt()
         compilerOptions {

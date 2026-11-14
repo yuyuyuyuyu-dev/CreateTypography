@@ -41,18 +41,21 @@ dependencies {
 android {
     namespace = "dev.yuyuyuyuyu.createtypography.example"
     compileSdk =
-        libs.versions.android.compileSdk
+        providers
+            .gradleProperty("androidCompileSdk")
             .get()
             .toInt()
 
     defaultConfig {
         applicationId = "dev.yuyuyuyuyu.createtypography.example"
         minSdk =
-            libs.versions.android.minSdk
+            providers
+                .gradleProperty("androidMinSdk")
                 .get()
                 .toInt()
         targetSdk =
-            libs.versions.android.targetSdk
+            providers
+                .gradleProperty("androidTargetSdk")
                 .get()
                 .toInt()
         versionCode = 1

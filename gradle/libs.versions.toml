@@ -1,7 +1,5 @@
 [versions]
 agp = "9.5.1"
-android-compileSdk = "37"
-android-minSdk = "24"
 composeMultiplatform = "1.12.2"
 detekt = "1.23.8"
 googleFonts = "1.12.1"
