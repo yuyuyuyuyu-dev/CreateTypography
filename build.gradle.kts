@@ -12,9 +12,3 @@ plugins {
 ktlint {
     version = libs.versions.ktlintCli.get()
 }
-
-versionCatalogUpdate {
-    keep {
-        keepUnusedVersions = true
-    }
-}

@@ -31,14 +31,8 @@ detekt {
 kotlin {
     android {
         namespace = "dev.yuyuyuyuyu.createtypography"
-        compileSdk =
-            libs.versions.android.compileSdk
-                .get()
-                .toInt()
-        minSdk =
-            libs.versions.android.minSdk
-                .get()
-                .toInt()
+        compileSdk = 37
+        minSdk = 24
         compilerOptions {
             jvmTarget = JvmTarget.JVM_11
         }
