@@ -2,7 +2,7 @@
 agp = "9.5.1"
 composeMultiplatform = "1.12.2"
 detekt = "1.23.8"
-googleFonts = "1.12.1"
+googleFonts = "1.13.0"
 kotlin = "2.4.21"
 ktlint = "14.2.0"
 ktlintCli = "1.8.0"
