@@ -49,11 +49,21 @@ kotlin {
     }
     android {
         namespace = "dev.yuyuyuyuyu.createtypography.example.shared"
-        compileSdk =
-            providers
-                .gradleProperty("androidCompileSdk")
-                .get()
-                .toInt()
+        compileSdk {
+            version =
+                release(
+                    providers
+                        .gradleProperty("androidCompileSdk")
+                        .get()
+                        .toInt(),
+                ) {
+                    minorApiLevel =
+                        providers
+                            .gradleProperty("androidCompileSdkMinor")
+                            .get()
+                            .toInt()
+                }
+        }
         minSdk =
             providers
                 .gradleProperty("androidMinSdk")

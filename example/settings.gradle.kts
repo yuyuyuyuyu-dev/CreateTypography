@@ -31,6 +31,12 @@ plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
 }
 
+includeBuild("..") {
+    dependencySubstitution {
+        substitute(module("dev.yuyuyuyuyu:createtypography")).using(project(":library"))
+    }
+}
+
 include(":androidApp")
 include(":desktopApp")
 include(":shared")
