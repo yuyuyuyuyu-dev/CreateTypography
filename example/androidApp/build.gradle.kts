@@ -40,11 +40,21 @@ dependencies {
 
 android {
     namespace = "dev.yuyuyuyuyu.createtypography.example"
-    compileSdk =
-        providers
-            .gradleProperty("androidCompileSdk")
-            .get()
-            .toInt()
+    compileSdk {
+        version =
+            release(
+                providers
+                    .gradleProperty("androidCompileSdk")
+                    .get()
+                    .toInt(),
+            ) {
+                minorApiLevel =
+                    providers
+                        .gradleProperty("androidCompileSdkMinor")
+                        .get()
+                        .toInt()
+            }
+    }
 
     defaultConfig {
         applicationId = "dev.yuyuyuyuyu.createtypography.example"
